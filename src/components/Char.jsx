@@ -20,7 +20,7 @@ const Char = React.createClass({
       <input type="text" value={this.props.emoji.char} className={inputClassName}
              title={this.props.emoji.name} readOnly onMouseOver={this.select}
              onClick={this.select}
-             onCopy={this.props.updateLastCopied.bind(null, this.props.emoji.index)} />
+             onCopy={this.props.updateLastCopied.bind(null, this.props.emoji)} />
     );
   }
 

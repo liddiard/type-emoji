@@ -54,10 +54,24 @@ const App = React.createClass({
   clearSearchText(event) {
     this.setState({searchText: ''});
     document.getElementById('search').focus();
+    // send a Google Analytics event
+    ga('send', {
+      'hitType': 'event',          // Required.
+      'eventCategory': 'search',   // Required.
+      'eventAction': 'clear'       // Required.
+    });
   },
 
-  updateLastCopied(index) {
-    this.setState({lastCopied: index});
+  updateLastCopied(emoji) {
+    this.setState({lastCopied: emoji.index});
+    // send a Google Analytics event
+    ga('send', {
+      'hitType': 'event',          // Required.
+      'eventCategory': 'emoji',    // Required.
+      'eventAction': 'copy',       // Required.
+      'eventLabel': emoji.char,
+      'eventValue': emoji.index
+    });
   },
 
   render() {
