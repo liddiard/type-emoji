@@ -72,7 +72,7 @@ const App = React.createClass({
                   lastCopied={this.state.lastCopied}
                   updateLastCopied={this.updateLastCopied} />
         <footer>
-          Created while procrastinating homework by <a href="http://www.harrisonliddiard.com/">Harrison Liddiard</a>. <a href="https://github.com/liddiard/type-emoji/">GitHub</a>.
+          Created while procrastinating by <a href="http://www.harrisonliddiard.com/">Harrison Liddiard</a>. <a href="https://github.com/liddiard/type-emoji/">GitHub</a>.
         </footer>
       </div>
     );
