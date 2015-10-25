@@ -16,11 +16,8 @@ const CharList = React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    // we're loading on startup, don't delay to search (i.e. show all emoji)
-    if (!this.props.emoji.length && !nextProps.searchText.length) {
-      this.search(nextProps);
-    }
-    else {
+    if (this.props.emoji.length && nextProps.searchText.length) {
+      // we have emoji and a search query
       if (this.timeoutId) {
         window.clearTimeout(this.timeoutId);
       }
@@ -72,7 +69,14 @@ const CharList = React.createClass({
 
   render() {
     // generate the React components
-    let emojiComponents = this.state.emojiListSorted.map(emoji => {
+    let emojiList;
+    if (this.props.searchText.length) {
+      emojiList = this.state.emojiListSorted;
+    }
+    else {
+      emojiList = this.props.emoji;
+    }
+    let emojiComponents = emojiList.map(emoji => {
       return (
         <Char emoji={emoji} key={emoji.index} />
       );
