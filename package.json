@@ -1,0 +1,23 @@
+{
+  "name": "project-emoji",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "watchify -v -d -o dist/bundle.js -t babelify -t scssify -t reactify src/app.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harrison Liddiard <omniaura5@gmail.com> (http://harrisonliddiard.com)",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.0",
+    "superagent": "^1.4.0"
+  },
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "reactify": "^1.1.1",
+    "scssify": "^0.3.6",
+    "watchify": "^3.4.0"
+  }
+}
