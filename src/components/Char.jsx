@@ -3,22 +3,23 @@ import React from 'react';
 const Char = React.createClass({
 
   propTypes: {
-    emoji: React.PropTypes.object.isRequired
+    emoji: React.PropTypes.object.isRequired,
+    updateLastCopied: React.PropTypes.func.isRequired
   },
 
   select(event) {
     event.target.select();
   },
 
-  handleCopy(event) {
-    event.target.className = 'copied';
-  },
-
   render() {
+    let inputClassName = '';
+    if (this.props.lastCopied == this.props.emoji.index) {
+      inputClassName += 'copied';
+    }
     return (
-      <input type="text" value={this.props.emoji.char}
+      <input type="text" value={this.props.emoji.char} className={inputClassName}
              title={this.props.emoji.name} readOnly onMouseOver={this.select}
-             onCopy={this.handleCopy} />
+             onCopy={this.props.updateLastCopied.bind(null, this.props.emoji.index)} />
     );
   }
 

@@ -17,7 +17,9 @@ const App = React.createClass({
   getInitialState() {
     return {
       emoji: [],
-      searchText: ''
+      searchText: '',
+      lastCopied: -1 // Index property of emoji last copied to keyboard.
+                     // Negative values do not correspond to any emoji.
     };
   },
 
@@ -52,6 +54,10 @@ const App = React.createClass({
     document.getElementById('search').focus();
   },
 
+  updateLastCopied(index) {
+    this.setState({lastCopied: index});
+  },
+
   render() {
     return (
       <div id="app">
@@ -62,7 +68,9 @@ const App = React.createClass({
         <Search searchText={this.state.searchText}
                 updateSearchText={this.updateSearchText}
                 clearSearchText={this.clearSearchText} />
-        <CharList emoji={this.state.emoji} searchText={this.state.searchText} />
+        <CharList emoji={this.state.emoji} searchText={this.state.searchText}
+                  lastCopied={this.state.lastCopied}
+                  updateLastCopied={this.updateLastCopied} />
         <footer>
           Created while procrastinating homework by <a href="http://www.harrisonliddiard.com/">Harrison Liddiard</a>. <a href="https://github.com/liddiard/type-emoji/">GitHub</a>.
         </footer>
