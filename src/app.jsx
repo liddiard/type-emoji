@@ -31,8 +31,10 @@ const App = React.createClass({
     }.bind(this));
 
     document.addEventListener('keydown', event => {
-      if (event.metaKey || event.ctrlKey) {
-        return; // a copy or other control event is about to happen; do nothing
+      // don't do anything if a control event like copy, paste, etc. is about
+      // to happen, unless it's Ctrl/Cmd-A (key code 65, select all)
+      if (event.keyCode !== 65 && (event.metaKey || event.ctrlKey)) {
+        return;
       }
       let search = document.getElementById('search');
       if (!search.selectionStart && !search.selectionEnd) {
