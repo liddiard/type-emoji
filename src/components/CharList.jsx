@@ -36,7 +36,7 @@ const CharList = React.createClass({
       return;
     }
 
-    let searchTextSplit = nextProps.searchText.split(' ');
+    let searchTextSplit = nextProps.searchText.toLowerCase().split(' ');
 
     // assign rankings to all emoji
     let emojiListRanked = nextProps.emoji;
