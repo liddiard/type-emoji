@@ -83,6 +83,9 @@ footer {
         margin: 0;
         padding: 0;
         font-family: 'Helvetica Neue', Helvetica, 'Segoe UI Emoji', Arial, sans-serif;
+        -webkit-appearance: none;
+        line-height: 1;
+        border-radius: 0;
 
         &.copied {
             background-color: rgba(0,0,255, 0.1);
