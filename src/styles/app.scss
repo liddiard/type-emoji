@@ -1,3 +1,5 @@
+$HELVETICA: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 html {
     box-sizing: border-box;
 }
@@ -7,7 +9,7 @@ html {
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $HELVETICA;
 }
 
 ::-webkit-input-placeholder {
@@ -81,6 +83,7 @@ footer {
         cursor: text;
         border: 1px solid #ddd;
         margin: 0;
+        font-family: 'Segoe UI Emoji', $HELVETICA;
 
         &.copied {
             background-color: rgba(0,0,255, 0.1);
