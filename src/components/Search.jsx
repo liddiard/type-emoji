@@ -21,7 +21,7 @@ const Search = React.createClass({
     return (
       <div id="search-wrapper">
         <input type="text" id="search" placeholder="Search 🔎" autoFocus
-               value={this.props.searchText}
+               value={this.props.searchText} autoComplete="off"
                onChange={this.props.updateSearchText} />
         {clearSearch}
       </div>
