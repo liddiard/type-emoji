@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import request from 'superagent';
 
 import Search from './components/Search.jsx';
@@ -96,4 +97,4 @@ const App = React.createClass({
 
 });
 
-React.render(<App />, document.body);
+ReactDOM.render(<App />, document.querySelector('main'));
