@@ -52,7 +52,7 @@ const App = React.createClass({
     this.setState({searchText: event.target.value});
   },
 
-  clearSearchText(event) {
+  clearSearchText() {
     this.setState({searchText: ''});
     document.getElementById('search').focus();
     // send a Google Analytics event
@@ -79,7 +79,9 @@ const App = React.createClass({
     return (
       <div id="app">
         <header>
-          <h1><span className="emoji">💁</span>TypeEmoji</h1>
+          <h1 onClick={this.clearSearchText}>
+            <span className="emoji">💁</span>TypeEmoji
+          </h1>
           <h2>The no-nonsense emoji and emoticon search keyboard</h2>
         </header>
         <Search searchText={this.state.searchText}
