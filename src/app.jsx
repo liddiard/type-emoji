@@ -82,7 +82,7 @@ const App = React.createClass({
           <h1 onClick={this.clearSearchText}>
             <span className="emoji">💁</span>TypeEmoji
           </h1>
-          <h2>The no-nonsense emoji and emoticon search keyboard</h2>
+          <h2>The no-nonsense emoji search keyboard</h2>
         </header>
         <Search searchText={this.state.searchText}
                 updateSearchText={this.updateSearchText}
