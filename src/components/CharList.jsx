@@ -25,7 +25,7 @@ const CharList = React.createClass({
       }
       this.timeoutId = window.setTimeout(() => {
         this.search(nextProps);
-      }.bind(this), 200);
+      }, 200);
     }
   },
 
