@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "watchify -v -d -o dist/bundle.js -t babelify -t scssify -t reactify src/app.jsx",
+    "deploy": "./deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Harrison Liddiard <omniaura5@gmail.com> (http://harrisonliddiard.com)",
@@ -17,8 +18,12 @@
   "devDependencies": {
     "babelify": "^6.4.0",
     "browserify": "^11.2.0",
+    "cheerio": "^0.22.0",
+    "jsonfile": "^2.4.0",
     "reactify": "^1.1.1",
     "scssify": "^0.3.6",
+    "superagent": "^1.8.4",
+    "uglifyify": "^3.0.4",
     "watchify": "^3.4.0"
   }
 }
