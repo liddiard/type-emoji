@@ -28,7 +28,7 @@ const App = React.createClass({
     request
     .get(this.props.DATA_URL)
     .end(function(err, res){
-      this.setState({emoji: res.body.results.collection1});
+      this.setState({emoji: res.body});
     }.bind(this));
 
     document.addEventListener('keydown', event => {
