@@ -19,8 +19,8 @@ const App = React.createClass({
     return {
       emoji: [],
       searchText: '',
-      lastCopied: -1 // Index property of emoji last copied to keyboard.
-                     // Negative values do not correspond to any emoji.
+      lastCopied: '' // character of emoji last copied to keyboard.
+                     // empty string does not correspond to any emoji.
     };
   },
 
@@ -64,14 +64,13 @@ const App = React.createClass({
   },
 
   updateLastCopied(emoji) {
-    this.setState({lastCopied: emoji.index});
+    this.setState({lastCopied: emoji});
     // send a Google Analytics event
     ga('send', {
       'hitType': 'event',          // Required.
       'eventCategory': 'emoji',    // Required.
       'eventAction': 'copy',       // Required.
-      'eventLabel': emoji.char,
-      'eventValue': emoji.index
+      'eventLabel': emoji
     });
   },
 
