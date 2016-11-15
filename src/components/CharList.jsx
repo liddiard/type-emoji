@@ -7,7 +7,7 @@ const CharList = React.createClass({
   propTypes: {
     emoji: React.PropTypes.array.isRequired,
     searchText: React.PropTypes.string.isRequired,
-    lastCopied: React.PropTypes.number.isRequired,
+    lastCopied: React.PropTypes.string.isRequired,
     updateLastCopied: React.PropTypes.func.isRequired
   },
 
@@ -80,7 +80,7 @@ const CharList = React.createClass({
     }
     let emojiComponents = emojiList.map(emoji => {
       return (
-        <Char emoji={emoji} key={emoji.index} lastCopied={this.props.lastCopied}
+        <Char emoji={emoji} key={emoji.char} lastCopied={this.props.lastCopied}
               updateLastCopied={this.props.updateLastCopied} />
       );
     });
