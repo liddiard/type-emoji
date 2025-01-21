@@ -1,1 +1,1 @@
-# Superseded by [liddard/typeemoji-llm](https://github.com/liddiard/typeemoji-llm)
+# Superseded by [liddiard/typeemoji-llm](https://github.com/liddiard/typeemoji-llm)
